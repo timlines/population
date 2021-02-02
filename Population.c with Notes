@@ -1,0 +1,220 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // TODO: Prompt for start size
+    // 9 is the minimum allowed population start size
+    // re-promt the user if less than 9
+
+
+    int startSize;
+
+    do
+    {
+        startSize = get_int("Start size: ");
+    }
+    while (startSize < 9);
+
+
+    // TODO: Prompt for end size
+    // The number must be greater than the starting size.
+    // reprompt user if the ending size is less than starting size.
+
+    int endSize;
+
+    do
+    {
+        endSize = get_int("End size: ");
+    }
+    while (endSize < startSize);
+
+    // TODO: Calculate number of years until we reach threshold
+    
+    // 3 are born each year, three die each year
+    //  (startSize + startSize/3 + startSize/4)
+
+
+    //int years;
+
+    //for (int i = 0; i < 50; i++)
+    //{
+    //years == (startSize + startSize/3 - startSize/4);
+    //}
+
+
+    /*  int i = 1;
+    while (i <= 50)
+    {
+        printf("hello, world\n");
+        i++;
+    }
+
+
+
+    int growth = endSize - startSize;
+
+    for (int i = 0; i < growth; i++)
+    {
+        years = (startSize + startSize/3 - startSize/4);
+    }
+
+      int growth = endSize - startSize;
+
+    for (int years = startSize; years < endSize; years++)
+    {
+        years = (startSize + startSize/3 - startSize/4);
+    }
+
+
+
+    //Try the while loop with startSize? Maybe?
+
+
+    while (startSize < endSize)
+    {
+       int i = (startSize + startSize/3 - startSize/4);
+        i++; //or i--
+    }
+   
+
+
+     for (int years = startSize; years < endSize; years++)
+    {
+        years = (startSize + startSize/3 - startSize/4);
+    }
+    
+
+    // n = n + (n / 3) - (n / 4);
+    // Where n = population
+    
+    for (int i = 0; i < 50; i++)
+    {
+        int n = n + (n / 3) - (n / 4);
+    }
+    
+    int years = 1;
+
+    int growth = startSize + (startSize/3) - (startSize/4);
+    while (growth < endSize)
+    {
+        years++;
+    }
+
+    printf("Growth: %i\n", growth);
+    
+    
+       // for (int i = 0; i < (n == endSize); i++)
+    
+    // These lines will cause the terminal to crash.
+    
+    int years = 1;
+    
+    int n = startSize;
+    while ( n < endSize);
+    
+    n = n + (n/3) - (n/4);
+    */
+    
+    // I want it to start at the starting population size and 
+    //count up until it gets to the end population size.
+    // I might need something like this:
+    //for (int i = 0; i < 50; i++)
+    //{
+      //  int n = n + (n / 3) - (n / 4);
+    //}
+    
+    // I've got to find the right loop.
+    // this loop will loop forever.
+
+    
+    // This will correctly find the growth after one year but
+    // I need it to repeat.
+    //int n = startSize;
+
+    //n = n + (n / 3) - (n / 4);
+    
+    //Maybe the while (true) Loop?
+    //No, that just loops forever, and causes the terminal to crash.
+    //I need it to stop after it gets to the endSize.
+    //
+    //int n = startSize;
+    
+    //while (true)
+    //{
+      //  n = n + (n / 3) - (n / 4);
+    //}
+    
+    // oh hit ctrl + c to end the infinite loop.
+    
+   //Q. Maybe While (boolean-expr)??
+   //A. Maybe, but I don't know what it's doing.
+   //A. Maybe I need to keep track of the loops?
+  
+  /*
+   int n = startSize;
+   
+   while(n < endSize)
+   {
+       n = n + (n / 3) - (n / 4);
+   }
+  */
+  
+  //Okay add years to keep track. 
+  /*
+  int years = 0;
+  int n = startSize;
+   
+   while(n < endSize)
+   {
+       n = n + (n / 3) - (n / 4);
+       years++;
+   }
+  */
+  
+  //okay, it did something but what?
+  // It got growth of 208 and years 9.
+  // I might have got it, I'll double check.
+  //Holy Smokes Batman it works!
+  //special thanks to Doug Lloyd
+  
+  /*
+  
+    int years = 0;
+    int n = startSize;
+   
+    while(n < endSize)
+    {
+       n = n + (n / 3) - (n / 4);
+       years++;
+    }
+  */
+  
+  //Okay it seems to handle everything exepct 1.
+  //:( handles same starting and ending sizes
+  // Did not find "Years: 0" in "End Size: "
+  
+  //Okay let me test the code, when I run it it just doesn't 
+  //execpt any input that is equal to the start size. 
+  //So I just need to change the less than and equal sign above.
+  // Got it!
+  
+  //LOL, now to fix the style.
+  
+   int years = 0;
+    int n = startSize;
+   
+    while(n < endSize)
+    {
+       n = n + (n / 3) - (n / 4);
+       years++;
+    }
+  
+  
+    // TODO: Print number of years
+    
+    //int years = 1;
+
+    printf("Years: %i\n", years);
+
+}
